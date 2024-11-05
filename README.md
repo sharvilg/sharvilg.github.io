@@ -66,7 +66,7 @@
 
         .hero-img {
             width: 100%;
-            height: auto;
+            height: 120%;
             object-fit: cover;
             opacity: 0.8;
         }
