@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -292,13 +290,13 @@
 
     <script>
         (function(){
-            emailjs.init("64KarrdjnwUAPBWk0"); // Replace with your EmailJS user ID
+            emailjs.init("KaoDdcp5oCbvHac0B"); // Replace with your EmailJS user ID
         })();
 
         document.getElementById("appointment-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            emailjs.sendForm("service_ku0r608", "template_4kyzodk", this)
+            emailjs.sendForm("service_hp23", "template_23", this)
                 .then(function() {
                     document.getElementById("confirmation-message").style.display = "block";
                     document.getElementById("appointment-form").reset();
