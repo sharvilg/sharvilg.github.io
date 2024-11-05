@@ -61,11 +61,13 @@
         .hero {
             position: relative;
             text-align: center;
+            overflow: hidden;
         }
 
         .hero-img {
             width: 100%;
             height: auto;
+            object-fit: cover;
             opacity: 0.8;
         }
 
@@ -79,6 +81,21 @@
             text-align: center;
             padding: 0 20px;
         }
+
+        /* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 1.4em;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 1.2em;
+        padding: 0 5px;
+    }
+}
 
         h2 {
             margin-bottom: 20px;
