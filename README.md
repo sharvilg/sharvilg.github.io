@@ -296,7 +296,7 @@
         document.getElementById("appointment-form").addEventListener("submit", function(event) {
             event.preventDefault();
 
-            emailjs.sendForm("service_hp23", "template_23", this)
+            emailjs.sendForm("service_hp23", "template_hp23", this)
                 .then(function() {
                     document.getElementById("confirmation-message").style.display = "block";
                     document.getElementById("appointment-form").reset();
