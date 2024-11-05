@@ -1,3 +1,5 @@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,29 +23,31 @@
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         header {
-            background-color: #1E3A8A; /* Blue color */
+            background-color: #1E3A8A;
             color: white;
             padding: 20px 0;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 20px;
+            display: inline-block;
+            margin: 10px;
         }
 
         nav ul li a {
@@ -53,7 +57,7 @@
         }
 
         section {
-            padding: 60px 0;
+            padding: 40px 0;
         }
 
         .hero {
@@ -73,17 +77,22 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: black;
-            font-size: 2em;
+            font-size: 1.8em;
+            text-align: center;
+            padding: 0 20px;
         }
 
         h2 {
             margin-bottom: 20px;
-            font-size: 2em;
+            font-size: 1.8em;
             color: black;
+            text-align: center;
         }
 
         ul {
             list-style: none;
+            padding: 0;
+            text-align: center;
         }
 
         ul li {
@@ -92,7 +101,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 10px;
         }
 
@@ -109,19 +118,80 @@
 
         address {
             font-style: normal;
+            text-align: center;
         }
 
         footer {
             background-color: #1E3A8A;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         footer p {
             margin: 0;
         }
+
+        /* Appointment Booking Styles */
+        .appointment-form {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .appointment-form input, .appointment-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .appointment-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .appointment-form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .hero-text {
+                font-size: 1.4em;
+                padding: 0 10px;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
     </style>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 <body>
     <header>
@@ -171,7 +241,6 @@
         <div class="container">
             <h2>Hospital Gallery</h2>
             <div class="gallery">
-                <!-- Add your hospital photos here -->
                 <img src="hospital-image1.jpg" alt="Hospital Image 1">
                 <img src="hospital-image2.jpg" alt="Hospital Image 2">
                 <img src="hospital-image3.jpg" alt="Hospital Image 3">
@@ -192,10 +261,51 @@
         </div>
     </section>
 
+    <!-- Appointment Booking Section -->
+    <section id="appointment">
+        <div class="container appointment-form">
+            <h2>Book an Appointment</h2>
+            <form id="appointment-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+            <div id="confirmation-message" style="display: none;">Thank you! Your appointment request has been submitted.</div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 Anand Hospital, Kada. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        (function(){
+            emailjs.init("64KarrdjnwUAPBWk0"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById("appointment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_ku0r608", "template_4kyzodk", this)
+                .then(function() {
+                    document.getElementById("confirmation-message").style.display = "block";
+                    document.getElementById("appointment-form").reset();
+                }, function(error) {
+                    console.error("Failed to send appointment request:", error);
+                });
+        });
+    </script>
 </body>
 </html>
