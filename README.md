@@ -73,18 +73,20 @@
 
         .hero-text {
             position: absolute;
-            top: 50%;
+            top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: black;
             font-size: 1.8em;
             text-align: center;
             padding: 0 20px;
+            width: 90%; /* Ensure text doesn't overflow */
         }
 
         /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-text {
+        top: 50%; /* Adjust as needed */
         font-size: 1.4em;
         padding: 0 10px;
     }
@@ -92,6 +94,7 @@
 
 @media (max-width: 480px) {
     .hero-text {
+        top: 55%; /* Adjust as needed *
         font-size: 1.2em;
         padding: 0 5px;
     }
