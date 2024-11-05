@@ -73,14 +73,14 @@
 
         .hero-text {
             position: absolute;
-            top: 45%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             color: black;
-            font-size: 1.0em;
+            font-size: 1.5em;
             text-align: center;
             padding: 0 20px;
-            width: 90%; /* Ensure text doesn't overflow */
+            width: 100%; /* Ensure text doesn't overflow */
         }
 
         /* Responsive adjustments */
