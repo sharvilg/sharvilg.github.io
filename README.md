@@ -83,23 +83,6 @@
             width: 100%; /* Ensure text doesn't overflow */
         }
 
-        /* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-text {
-        top: 50%; /* Adjust as needed */
-        font-size: 1.4em;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text {
-        top: 55%; /* Adjust as needed *
-        font-size: 1.2em;
-        padding: 0 5px;
-    }
-}
-
         h2 {
             margin-bottom: 20px;
             font-size: 1.8em;
