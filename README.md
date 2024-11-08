@@ -43,7 +43,7 @@
 
     <div class="background">
         <div class="container">
-            <button class="button" onclick="window.location.href='anand hp 6.html'">PATIENT</button>
+            <button class="button" onclick="window.location.href='anand hp 6.html'">PATIENTS</button>
             <button class="button" onclick="window.location.href='staff.html'">STAFF</button>
         </div>
     </div>
