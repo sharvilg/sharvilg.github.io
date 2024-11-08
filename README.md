@@ -7,7 +7,7 @@
             background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: 100;
             background-position: center;
-            height: 100%;
+            height: cover;
             display: flex;
             justify-content: center;
             align-items: center;
