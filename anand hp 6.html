@@ -89,17 +89,35 @@
             transform: scale(1.05);
         }
 
-        .appointment-form input,
-        .appointment-form button {
+                /* Appointment Booking Styles */
+        .appointment-form {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .appointment-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .appointment-form input, .appointment-form button {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         .appointment-form button {
-            background: #00796b;
-            color: #fff;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .appointment-form button:hover {
+            background-color: #45a049;
         }
 
         footer {
