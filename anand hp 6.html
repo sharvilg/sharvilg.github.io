@@ -143,7 +143,7 @@
             <h2>Meet Our Doctors</h2>
             <ul>
                 <h2><li>Dr. Pramod Prakash Bhalgat - Specialist</li>
-                <img src="hospital-hero.jpg" alt="Dr. Pramod Prakash Bhalgat - Specialist" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 9px;">
+                <img src="hospital-hero.jpg" alt="Dr. Pramod Prakash Bhalgat - SpecialistS" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 9px;">
                 <li>Dr. Kavita Pramod Bhalgat - Expert </li><h2>
                 <img src="hospital-hero.jpg" alt="Dr.2" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 10px;">
             </ul>
@@ -172,16 +172,26 @@
         </div>
     </section>
 
-    <section id="booking">
+    <!-- Appointment Booking Section -->
+    <section id="appointment">
         <div class="container appointment-form">
             <h2>Book an Appointment</h2>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Phone" required>
-                <input type="date" required>
-                <button type="submit">Submit</button>
+            <form id="appointment-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <button type="submit">Book Appointment</button>
             </form>
+            <div id="confirmation-message" style="display: none;">Thank you! Your appointment request has been submitted.</div>
         </div>
     </section>
 
