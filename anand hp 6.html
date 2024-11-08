@@ -144,7 +144,7 @@
             <ul>
                 <h2><li>Dr. Pramod Prakash Bhalgat - Specialist</li>
                 <img src="hospital-hero.jpg" alt="Dr. Pramod Prakash Bhalgat - Specialist" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 9px;">
-                <li>Dr. Kavita Pramod Bhalgat - Expert Surgeon</li><h2>
+                <li>Dr. Kavita Pramod Bhalgat - Expert </li><h2>
                 <img src="hospital-hero.jpg" alt="Dr.2" style="width: 150px; height: 150px; border-radius: 50%; margin-top: 10px;">
             </ul>
         </div>
@@ -188,4 +188,21 @@
     <footer>
         <p>&copy; 2024 Anand Hospital, Kada. All rights reserved.</p>
     </footer>
+
+    <script>
+        (function(){
+            emailjs.init("KaoDdcp5oCbvHac0B"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById("appointment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_hp23", "template_hp23", this)
+                .then(function() {
+                    document.getElementById("confirmation-message").style.display = "block";
+                    document.getElementById("appointment-form").reset();
+                }, function(error) {
+                    console.error("Failed to send appointment request:", error);
+                });
+        });
 </body>
